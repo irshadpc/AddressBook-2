@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Contact.h"
 
 @interface ContactListControllerViewController : UITableViewController
+
+@property (nonatomic, strong) NSMutableArray *contactList;
+
+// override
+-(id)initWithCoder:(NSCoder *)aDecoder;
 
 @end

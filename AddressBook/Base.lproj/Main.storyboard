@@ -13,7 +13,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ContactCell" id="mUg-Uu-JYH">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="contactCell" id="mUg-Uu-JYH">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mUg-Uu-JYH" id="gTT-Fn-WU2">
@@ -35,6 +35,10 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="0Vd-hh-aTd" id="ZYO-Y4-Cyn"/>
+                            <outlet property="delegate" destination="0Vd-hh-aTd" id="OJs-Eh-8bx"/>
+                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Contacts" id="FBk-sc-N8j">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fx7-Lx-bQT"/>

@@ -133,6 +133,7 @@
 				451FD11C18A279930074E5B5 /* AppDelegate.m */,
 				451FD11E18A279930074E5B5 /* Main.storyboard */,
 				451FD14318A2836A0074E5B5 /* ContactListControllerViewController.h */,
+				451FD14418A2836A0074E5B5 /* ContactListControllerViewController.m */,
 				451FD14618A28A1E0074E5B5 /* Contact.h */,
 				451FD14718A28A1E0074E5B5 /* Contact.m */,
 				451FD14918A28A4E0074E5B5 /* EtatCivil.h */,
@@ -143,7 +144,6 @@
 				451FD15318A28D1E0074E5B5 /* OtherInfo.m */,
 				451FD14F18A28C710074E5B5 /* Communications.h */,
 				451FD15018A28C710074E5B5 /* Communications.m */,
-				451FD14418A2836A0074E5B5 /* ContactListControllerViewController.m */,
 				451FD12418A279940074E5B5 /* Images.xcassets */,
 				451FD11318A279930074E5B5 /* Supporting Files */,
 			);
@@ -499,6 +499,7 @@
 				451FD13D18A279940074E5B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		451FD13E18A279940074E5B5 /* Build configuration list for PBXNativeTarget "AddressBookTests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +508,7 @@
 				451FD14018A279940074E5B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -10,24 +10,35 @@
 
 @interface ContactListControllerViewController ()
 // temporary method to initialize the cell's label with a sample string. later, it will need to show the contact's name and first name.
--(void) configureTextForCell:(UITableViewCell *)cell withString:(NSString *)testString;
+-(void)configureTextForCell:(UITableViewCell *)cell withItem:(Contact *)item;
 @end
 
 @implementation ContactListControllerViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super initWithStyle:style];
+    // for now this just overrides the method of UIviewcontroller and fills the array of this controller with references to the same contact
+    // aDecoder is not yet used
+    self = [super init];
+    
     if (self) {
-        // Custom initialization
+        self.contactList = [[NSMutableArray alloc] initWithCapacity:20];
+        
+        Contact *myContact = [Contact new];
+        myContact.etatCivil.firstName = @"Gilles";
+        myContact.etatCivil.lastName = @"Major";
+        for (int i = 0; i < 20; i++) {
+            [self.contactList addObject:myContact];
+        }
     }
+    
     return self;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -47,26 +58,24 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 4;
+    return [self.contactList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"ContactCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"contactCell"];
+    Contact *item = self.contactList[indexPath.row];
     
-    // Configure the cell...
-    NSString *cellString = @"Test string";
-    [self configureTextForCell:cell withString:cellString];
+    [self configureTextForCell:cell withItem:item];
     
     return cell;
 }
 
 // implementation of class extension methods
--(void)configureTextForCell:(UITableViewCell *)cell withString:(NSString *)testString
+-(void)configureTextForCell:(UITableViewCell *)cell withItem:(Contact *)item;
 {
-    UILabel *label = (UILabel *)[cell viewWithTag:1];
-    label.text = testString;
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", item.etatCivil.firstName, item.etatCivil.lastName];
+    
 }
 /*
 // Override to support conditional editing of the table view.
