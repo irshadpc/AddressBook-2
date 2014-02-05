@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface OtherInfo : NSObject
-@property (nonatomic, copy)NSString *observations, *category;
+@property (nonatomic, retain)NSString *observations, *category;
 @end

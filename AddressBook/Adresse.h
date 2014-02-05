@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface Adresse : NSObject
-@property (nonatomic, copy)NSString *street, *number, *postalCode, *city, *country;
+@property (nonatomic, retain)NSString *street, *number, *postalCode, *city, *country;
 
 @end

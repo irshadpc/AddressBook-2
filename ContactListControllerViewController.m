@@ -19,18 +19,23 @@
 {
     // for now this just overrides the method of UIviewcontroller and fills the array of this controller with references to the same contact
     // aDecoder is not yet used
-    self = [super init];
+    self = [super initWithCoder:aDecoder];
     
     if (self) {
         self.contactList = [[NSMutableArray alloc] initWithCapacity:20];
         
         Contact *myContact = [Contact new];
+        EtatCivil *myEtat = [[EtatCivil alloc] init];
+        myContact.etatCivil = myEtat;
+        
         myContact.etatCivil.firstName = @"Gilles";
         myContact.etatCivil.lastName = @"Major";
         for (int i = 0; i < 20; i++) {
             [self.contactList addObject:myContact];
         }
     }
+    Contact *contact = self.contactList[1];
+    NSLog(@"nom: %@", contact.etatCivil.firstName);
     
     return self;
 }
@@ -63,18 +68,21 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"contactCell"];
+    static NSString *CellIdentifier = @"contactCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
     Contact *item = self.contactList[indexPath.row];
     
     [self configureTextForCell:cell withItem:item];
-    
+
     return cell;
 }
 
 // implementation of class extension methods
 -(void)configureTextForCell:(UITableViewCell *)cell withItem:(Contact *)item;
 {
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", item.etatCivil.firstName, item.etatCivil.lastName];
+    UILabel *label = (UILabel *)[cell viewWithTag:1];
+    label.text = [NSString stringWithFormat:@"%@ %@", item.etatCivil.firstName, item.etatCivil.lastName];
     
 }
 /*

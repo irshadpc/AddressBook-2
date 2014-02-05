@@ -12,7 +12,7 @@
 #import "Communications.h"
 
 @interface Contact : NSObject
-@property (nonatomic, copy)EtatCivil *etatCivil;
-@property (nonatomic, copy)Communications *communications;
-@property (nonatomic, copy)OtherInfo *otherInfo;
+@property (nonatomic, retain)EtatCivil *etatCivil;
+@property (nonatomic, retain)Communications *communications;
+@property (nonatomic, retain)OtherInfo *otherInfo;
 @end

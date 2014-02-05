@@ -10,8 +10,8 @@
 #import "Adresse.h"
 
 @interface EtatCivil : NSObject
-@property (nonatomic, copy)NSString *status, *firstName, *lastName;
-@property (nonatomic, copy)Adresse *mainAddress;
-@property (nonatomic, copy)NSDate *birthday;
+@property (nonatomic, retain)NSString *status, *firstName, *lastName;
+@property (nonatomic, retain)Adresse *mainAddress;
+@property (nonatomic, retain)NSDate *birthday;
 @end
 

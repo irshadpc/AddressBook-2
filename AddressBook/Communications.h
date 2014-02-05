@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface Communications : NSObject
-@property NSString *phoneNumber, *faxNumber, *mobileNumber, *emailAddress, *website;
+@property (nonatomic, retain)NSString *phoneNumber, *faxNumber, *mobileNumber, *emailAddress, *website;
 @end
