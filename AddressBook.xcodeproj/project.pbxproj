@@ -22,6 +22,11 @@
 		451FD13818A279940074E5B5 /* AddressBookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 451FD13718A279940074E5B5 /* AddressBookTests.m */; };
 		451FD14218A281860074E5B5 /* an image file.gif in Resources */ = {isa = PBXBuildFile; fileRef = 451FD14118A281860074E5B5 /* an image file.gif */; };
 		451FD14518A2836A0074E5B5 /* ContactListControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 451FD14418A2836A0074E5B5 /* ContactListControllerViewController.m */; };
+		451FD14818A28A1F0074E5B5 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 451FD14718A28A1E0074E5B5 /* Contact.m */; };
+		451FD14B18A28A4E0074E5B5 /* EtatCivil.m in Sources */ = {isa = PBXBuildFile; fileRef = 451FD14A18A28A4E0074E5B5 /* EtatCivil.m */; };
+		451FD14E18A28A600074E5B5 /* Adresse.m in Sources */ = {isa = PBXBuildFile; fileRef = 451FD14D18A28A600074E5B5 /* Adresse.m */; };
+		451FD15118A28C710074E5B5 /* Communications.m in Sources */ = {isa = PBXBuildFile; fileRef = 451FD15018A28C710074E5B5 /* Communications.m */; };
+		451FD15418A28D1E0074E5B5 /* OtherInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 451FD15318A28D1E0074E5B5 /* OtherInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +60,16 @@
 		451FD14118A281860074E5B5 /* an image file.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "an image file.gif"; path = "../../../../../Desktop/computer science2/languages/python/Real Python/course/Course materials/Chapter 7/Practice files folder folder/images/an image file.gif"; sourceTree = "<group>"; };
 		451FD14318A2836A0074E5B5 /* ContactListControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactListControllerViewController.h; path = ../ContactListControllerViewController.h; sourceTree = "<group>"; };
 		451FD14418A2836A0074E5B5 /* ContactListControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactListControllerViewController.m; path = ../ContactListControllerViewController.m; sourceTree = "<group>"; };
+		451FD14618A28A1E0074E5B5 /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
+		451FD14718A28A1E0074E5B5 /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
+		451FD14918A28A4E0074E5B5 /* EtatCivil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EtatCivil.h; sourceTree = "<group>"; };
+		451FD14A18A28A4E0074E5B5 /* EtatCivil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EtatCivil.m; sourceTree = "<group>"; };
+		451FD14C18A28A600074E5B5 /* Adresse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Adresse.h; sourceTree = "<group>"; };
+		451FD14D18A28A600074E5B5 /* Adresse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Adresse.m; sourceTree = "<group>"; };
+		451FD14F18A28C710074E5B5 /* Communications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Communications.h; sourceTree = "<group>"; };
+		451FD15018A28C710074E5B5 /* Communications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Communications.m; sourceTree = "<group>"; };
+		451FD15218A28D1E0074E5B5 /* OtherInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherInfo.h; sourceTree = "<group>"; };
+		451FD15318A28D1E0074E5B5 /* OtherInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +133,16 @@
 				451FD11C18A279930074E5B5 /* AppDelegate.m */,
 				451FD11E18A279930074E5B5 /* Main.storyboard */,
 				451FD14318A2836A0074E5B5 /* ContactListControllerViewController.h */,
+				451FD14618A28A1E0074E5B5 /* Contact.h */,
+				451FD14718A28A1E0074E5B5 /* Contact.m */,
+				451FD14918A28A4E0074E5B5 /* EtatCivil.h */,
+				451FD14A18A28A4E0074E5B5 /* EtatCivil.m */,
+				451FD14C18A28A600074E5B5 /* Adresse.h */,
+				451FD14D18A28A600074E5B5 /* Adresse.m */,
+				451FD15218A28D1E0074E5B5 /* OtherInfo.h */,
+				451FD15318A28D1E0074E5B5 /* OtherInfo.m */,
+				451FD14F18A28C710074E5B5 /* Communications.h */,
+				451FD15018A28C710074E5B5 /* Communications.m */,
 				451FD14418A2836A0074E5B5 /* ContactListControllerViewController.m */,
 				451FD12418A279940074E5B5 /* Images.xcassets */,
 				451FD11318A279930074E5B5 /* Supporting Files */,
@@ -256,8 +281,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				451FD14818A28A1F0074E5B5 /* Contact.m in Sources */,
 				451FD14518A2836A0074E5B5 /* ContactListControllerViewController.m in Sources */,
+				451FD15118A28C710074E5B5 /* Communications.m in Sources */,
 				451FD11D18A279930074E5B5 /* AppDelegate.m in Sources */,
+				451FD15418A28D1E0074E5B5 /* OtherInfo.m in Sources */,
+				451FD14E18A28A600074E5B5 /* Adresse.m in Sources */,
+				451FD14B18A28A4E0074E5B5 /* EtatCivil.m in Sources */,
 				451FD11918A279930074E5B5 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
