@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ContactListControllerViewController.h
 //  AddressBook
 //
 //  Created by Gilles Major on 05/02/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ContactListControllerViewController : UITableViewController
 
 @end
