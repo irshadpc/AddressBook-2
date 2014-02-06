@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface OtherInfo : NSObject
 @property (nonatomic, retain)NSString *observations, *category;
 @end

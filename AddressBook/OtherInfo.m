@@ -8,6 +8,9 @@
 
 #import "OtherInfo.h"
 
+// TO DO: supposed to be filled once the user creates a new category to save typing. might need to provide some default categories.
+static NSMutableSet *categories;
+
 @implementation OtherInfo
 
 

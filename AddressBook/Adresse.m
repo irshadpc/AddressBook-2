@@ -8,6 +8,10 @@
 
 #import "Adresse.h"
 
+// mutable sets to hold all existing possible postal codes, streets, cities and countries
+// will be used to offer suggestions to save typing
+static NSMutableSet *setOfPostalCodes, *setOfStreets, *setOfCities, *setOfCountries;
+
 @implementation Adresse
 
 @end
