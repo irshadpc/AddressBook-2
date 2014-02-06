@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "Contact.h"
 
-@interface ContactListControllerViewController : UITableViewController
+@interface ContactListControllerViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate>
 
+@property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (nonatomic, strong) NSMutableArray *contactList;
 
 // override
