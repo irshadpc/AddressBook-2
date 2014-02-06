@@ -25,7 +25,8 @@
         self.contactList = [[NSMutableArray alloc] initWithCapacity:20];
         
         Contact *myContact = [Contact new];
-        EtatCivil *myEtat = [[EtatCivil alloc] init];
+        EtatCivil *myEtat = [[EtatCivil alloc] init]; // if I don't to this, memory chunks are not allocated for objects at lower levels
+        // NEED TO AUTOMATE THIS PROCESS WHEN CREATING A NEW CONTACT!!!!!!!!
         myContact.etatCivil = myEtat;
         
         myContact.etatCivil.firstName = @"Gilles";
@@ -34,9 +35,6 @@
             [self.contactList addObject:myContact];
         }
     }
-    Contact *contact = self.contactList[1];
-    NSLog(@"nom: %@", contact.etatCivil.firstName);
-    
     return self;
 }
 
