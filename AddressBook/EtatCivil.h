@@ -13,5 +13,7 @@
 @property (nonatomic, retain)NSString *status, *firstName, *lastName;
 @property (nonatomic, retain)Adresse *mainAddress;
 @property (nonatomic, retain)NSDate *birthday;
+
+- (id) init;
 @end
 

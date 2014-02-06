@@ -15,4 +15,6 @@
 @property (nonatomic, retain)EtatCivil *etatCivil;
 @property (nonatomic, retain)Communications *communications;
 @property (nonatomic, retain)OtherInfo *otherInfo;
+
+- (id) init;
 @end

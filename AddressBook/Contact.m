@@ -10,4 +10,14 @@
 
 @implementation Contact
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        _etatCivil = [EtatCivil new];
+        _communications = [Communications new];
+        _otherInfo = [OtherInfo new];
+    }
+    return self;
+}
 @end

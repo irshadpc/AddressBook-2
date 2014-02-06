@@ -9,5 +9,13 @@
 #import "EtatCivil.h"
 
 @implementation EtatCivil
-
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        _mainAddress = [Adresse new];
+    }
+    
+    return self;
+}
 @end
