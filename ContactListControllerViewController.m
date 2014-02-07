@@ -100,13 +100,34 @@
     return cell;
 }
 
+// to implement: indexed list allowing to scroll with alphabetical letters.
+
+/*
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
+{
+    
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    
+}
+
+- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
+{
+    
+}
+
+*/
+
 // implementation of class extension methods
 -(void)configureTextForCell:(UITableViewCell *)cell withItem:(Contact *)item;
 {
     UILabel *label = (UILabel *)[cell viewWithTag:1];
-    label.text = [NSString stringWithFormat:@"%@ %@", item.etatCivil.firstName, item.etatCivil.lastName];
-    
+    label.text = [NSString stringWithFormat:@"%@ %@", item.etatCivil.lastName, item.etatCivil.firstName];
 }
+
+
 
 #pragma mark - Content Filtering
 
@@ -116,9 +137,17 @@
     // Remove all objects from the filtered search array
     [self.filteredContactList removeAllObjects];
     // Filter the array using NSPredicate
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.etatCivil.lastName contains[c] %@", searchText];
-    // here, the self.filteredContactList is filled with a filtered copy of _contactList, by using a predicate
-    self.filteredContactList = [NSMutableArray arrayWithArray:[self.contactList filteredArrayUsingPredicate:predicate]];
+    
+    // the following is not yet correct. need to filter "gilles" "gilles major" "major" " major gilles etc"
+    
+    NSPredicate *predicateFirstName = [NSPredicate predicateWithFormat:@"SELF.etatCivil.firstName contains[c] %@", searchText];
+    NSPredicate *predicateLastName = [NSPredicate predicateWithFormat:@"SELF.etatCivil.lastName contains[c] %@", searchText];
+    NSArray *predicatesArray = [[NSArray alloc] initWithObjects:predicateFirstName, predicateLastName, nil];
+    NSPredicate *orPred = [NSCompoundPredicate orPredicateWithSubpredicates:predicatesArray];
+    
+   
+    self.filteredContactList = [NSMutableArray arrayWithArray:[self.contactList filteredArrayUsingPredicate:orPred]];
+    //self.filteredContactList = [NSMutableArray arrayWithArray:[self.contactList filteredArrayUsingPredicate:predicate]];
 }
 
 // implementation of UISearchBarDelegate
