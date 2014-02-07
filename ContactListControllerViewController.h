@@ -13,6 +13,7 @@
 
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (nonatomic, strong) NSMutableArray *contactList;
+@property (nonatomic, strong) NSMutableArray *filteredContactList;
 
 // override
 -(id)initWithCoder:(NSCoder *)aDecoder;

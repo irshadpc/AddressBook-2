@@ -4,13 +4,16 @@
 //
 //  Created by Gilles Major on 05/02/14.
 //  Copyright (c) 2014 Gilles Major. All rights reserved.
-//
+////
 
 #import "ContactListControllerViewController.h"
 
 @interface ContactListControllerViewController ()
 // temporary method to initialize the cell's label with a sample string. later, it will need to show the contact's name and first name.
 -(void)configureTextForCell:(UITableViewCell *)cell withItem:(Contact *)item;
+
+// content filtering for the search bar
+- (void) filterContentForSearchText:(NSString *)searchText scope:(NSString *)scope;
 @end
 
 @implementation ContactListControllerViewController
@@ -23,6 +26,9 @@
     
     if (self) {
         self.contactList = [[NSMutableArray alloc] initWithCapacity:20];
+        // Initialize the filtered array initially at the same size as the normal array.
+        self.filteredContactList = [[NSMutableArray alloc] initWithCapacity:[self.contactList count]];
+        
         
         Contact *myContact = [Contact new];
         myContact.etatCivil.firstName = @"Gilles";
@@ -30,6 +36,9 @@
         for (int i = 0; i < 20; i++) {
             [self.contactList addObject:myContact];
         }
+        
+        // TO BE DELETED
+        //[self.filteredContactList addObject:myContact];
     }
     return self;
 }
@@ -56,19 +65,38 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-    return [self.contactList count];
+    // Check to see whether the normal table or search results table is being displayed and return the count from the
+    // appropriate array
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return [self.filteredContactList count];
+    }
+    else {
+        return [self.contactList count];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"contactCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    // in the example below, the self before table view is essential so the right type of cell is sent to the
+    // search display table view
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    Contact *item = self.contactList[indexPath.row];
     
-    [self configureTextForCell:cell withItem:item];
+    Contact *item;
+    
+    // Check to see whether the normal table or search results table is being displayed and set the item object from
+    // the appropriate array
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        item = self.filteredContactList[indexPath.row];
+    }
+    else {
+        item = self.contactList[indexPath.row];
+    }
+    
 
+    [self configureTextForCell:cell withItem:item];
+    
     return cell;
 }
 
@@ -79,6 +107,43 @@
     label.text = [NSString stringWithFormat:@"%@ %@", item.etatCivil.firstName, item.etatCivil.lastName];
     
 }
+
+#pragma mark - Content Filtering
+
+- (void) filterContentForSearchText:(NSString *)searchText scope:(NSString *)scope
+{
+    // Update the filtered array based on the search text and scope.
+    // Remove all objects from the filtered search array
+    [self.filteredContactList removeAllObjects];
+    // Filter the array using NSPredicate
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.etatCivil.lastName contains[c] %@", searchText];
+    // here, the self.filteredContactList is filled with a filtered copy of _contactList, by using a predicate
+    self.filteredContactList = [NSMutableArray arrayWithArray:[self.contactList filteredArrayUsingPredicate:predicate]];
+}
+
+// implementation of UISearchBarDelegate
+
+#pragma mark - UISearchDisplayController Delegate Methods
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    // Tells the table data source to reload when text changes
+    [self filterContentForSearchText:searchString scope:
+     [[self.searchDisplayController.searchBar scopeButtonTitles]
+        objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
+    // Return YES to cause the search result table view to be reloaded
+    return YES;
+}
+
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption
+{
+   // Tells the table data source to reload when scope bar selection changes
+    [self filterContentForSearchText:self.searchDisplayController.searchBar.text scope:
+     [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:searchOption]];
+    // Return YES to cause the search result table view to be reloaded
+    return YES;
+}
+
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
