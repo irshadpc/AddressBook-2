@@ -20,7 +20,6 @@
 		451FD12E18A279940074E5B5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 451FD11018A279930074E5B5 /* UIKit.framework */; };
 		451FD13618A279940074E5B5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 451FD13418A279940074E5B5 /* InfoPlist.strings */; };
 		451FD13818A279940074E5B5 /* AddressBookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 451FD13718A279940074E5B5 /* AddressBookTests.m */; };
-		451FD14218A281860074E5B5 /* an image file.gif in Resources */ = {isa = PBXBuildFile; fileRef = 451FD14118A281860074E5B5 /* an image file.gif */; };
 		451FD14518A2836A0074E5B5 /* ContactListControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 451FD14418A2836A0074E5B5 /* ContactListControllerViewController.m */; };
 		451FD14818A28A1F0074E5B5 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 451FD14718A28A1E0074E5B5 /* Contact.m */; };
 		451FD14B18A28A4E0074E5B5 /* EtatCivil.m in Sources */ = {isa = PBXBuildFile; fileRef = 451FD14A18A28A4E0074E5B5 /* EtatCivil.m */; };
@@ -57,7 +56,6 @@
 		451FD13318A279940074E5B5 /* AddressBookTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AddressBookTests-Info.plist"; sourceTree = "<group>"; };
 		451FD13518A279940074E5B5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		451FD13718A279940074E5B5 /* AddressBookTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddressBookTests.m; sourceTree = "<group>"; };
-		451FD14118A281860074E5B5 /* an image file.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "an image file.gif"; path = "../../../../../Desktop/computer science2/languages/python/Real Python/course/Course materials/Chapter 7/Practice files folder folder/images/an image file.gif"; sourceTree = "<group>"; };
 		451FD14318A2836A0074E5B5 /* ContactListControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactListControllerViewController.h; path = ../ContactListControllerViewController.h; sourceTree = "<group>"; };
 		451FD14418A2836A0074E5B5 /* ContactListControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactListControllerViewController.m; path = ../ContactListControllerViewController.m; sourceTree = "<group>"; };
 		451FD14618A28A1E0074E5B5 /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
@@ -155,7 +153,6 @@
 			children = (
 				451FD11418A279930074E5B5 /* AddressBook-Info.plist */,
 				451FD11518A279930074E5B5 /* InfoPlist.strings */,
-				451FD14118A281860074E5B5 /* an image file.gif */,
 				451FD11818A279930074E5B5 /* main.m */,
 				451FD11A18A279930074E5B5 /* AddressBook-Prefix.pch */,
 			);
@@ -262,7 +259,6 @@
 				451FD12518A279940074E5B5 /* Images.xcassets in Resources */,
 				451FD11718A279930074E5B5 /* InfoPlist.strings in Resources */,
 				451FD12018A279930074E5B5 /* Main.storyboard in Resources */,
-				451FD14218A281860074E5B5 /* an image file.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
